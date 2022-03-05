@@ -4,6 +4,7 @@
   "description": "Generated with 11ty and deployed to Netlify.",
   "main": "index.js",
   "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
