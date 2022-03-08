@@ -416,4 +416,9 @@ label {
         padding-left: 30px;
     }
 
+    /* hide personal description */
+    .intro-text-wrapper {
+        display: none;
+    }
+
 }
