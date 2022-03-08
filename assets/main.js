@@ -2,7 +2,6 @@ main()
 
 function main() {
 
-    // animate section loading
     animateSectionLoading()
 
 
@@ -18,51 +17,44 @@ function main() {
 
 }
 
-
-
 function animateSectionLoading() {
+    /* Record all sections */
+    sections = document.querySelectorAll('section')
 
-    // get all sections by tag
-    let sections = document.querySelectorAll('section')
+    /* Map out the children of each section */
+    allChildren = [...sections].map(section => section.children)
 
-    // run when intersecting with section
-    let callback = (sections, observer) => {
-        sections.forEach(section => {
+    /* Create empty array for collecting all children */
+    tempArray = []
 
+    /* Iterate through each section to collect their children */
+    allChildren.forEach(child => {
+        tempArray.push(Array.from(child))
+    })
 
-            // get child div for animation, since the observer should still be tethered to the end position of the element, shown here by the section
-            let animationElm = section.target.firstChild.nextElementSibling
+    /* Flatten out the items in the array so they can all be accessed on the same plane. */
+    let finalArray = tempArray.flat()
 
-            // get all CSS properties
-            let animationProperties = window.getComputedStyle(animationElm)
+    /* ENTRY ANIMATION */
 
-            // boolean for if visible
-            let pendingAnimation = animationProperties.getPropertyValue('opacity') == 0
-
-            // if intersecting with window & not visible (opacity == 0)
-            if (section.isIntersecting && pendingAnimation) {
-
-                // add the default position styling, which will make everything fly in
-                animationElm.classList.add('animate-entry')
+    /* Create observer function to catch all elements for being watched */
+    const observer = new IntersectionObserver(entries => {
+        // Loop over the entries
+        entries.forEach(entry => {
+            // If the element is visible
+            if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add('animate');
             }
-
         });
-    };
+    });
 
-    // inter-observer requires pixels for the rootMargin option, so this grabs 20% of the viewport height in px
-    let thirtyPercentVH = window.innerHeight * .2
 
-    // instatiate the observer listener
-    let observer = new IntersectionObserver(callback, { rootMargin: `0px 0px -${thirtyPercentVH.toString()}px 0px` });
-
-    // apply the observer to every section
-    sections.forEach(section => {
+    finalArray.forEach(section => {
         observer.observe(section)
     })
 
 }
-
-
 
 // indicate successful submission of contact form
 function successStatus() {

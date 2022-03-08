@@ -100,12 +100,34 @@ section {
     margin    : 40px 0;
 }
 
-.pre-entry {
-    /* pre-render styles */
-    transition: all 1s ease;
-    opacity   : 0;
-    transform: translate(500px, 20px) scale(.5);
-}
+/* ANIMATION */
+
+/* element to animate */
+section > * {
+    transition: all 2s ease;
+  }
+  
+  /* declare animation effects and quality at different times */
+  @keyframes entry-slide {
+    0% {
+      transform: translate(30px, 70px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  
+  /* set media query which  */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate {
+      animation: entry-slide 1s 1;
+    }
+  }
+  
+  
 
 /* normal-view styles */
 .animate-entry {
