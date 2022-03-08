@@ -102,8 +102,8 @@ section {
 
 /* element to animate */
 section > * {
-  transition: all 1.5s ease;
-  transform: translate(30px, 70px);
+  transition: all 1s ease;
+  transform: translate(0, 70px);
   opacity: 0;
 }
 
