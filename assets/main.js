@@ -44,7 +44,7 @@ function animateSectionLoading() {
             // If the element is visible
             if (entry.isIntersecting) {
                 // Add the animation class
-                entry.target.classList.add('animate');
+                entry.target.classList.add('reveal');
             }
         });
     });
