@@ -4,7 +4,6 @@ function main() {
 
     animateSectionLoading()
 
-
     // load portrait when it's ready
     loadPortrait()
 
@@ -14,7 +13,6 @@ function main() {
     // check if a form has been submitted on load
     checkSubmissionStatus()
     successStatus()
-
 }
 
 function animateSectionLoading() {
