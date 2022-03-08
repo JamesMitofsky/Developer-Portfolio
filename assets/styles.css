@@ -189,7 +189,7 @@ section > * {
 .intro-text-wrapper {
   text-align: right;
   line-height: 2.5;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .contact-info-wrapper {
@@ -341,8 +341,9 @@ label {
 }
 
 @media only screen and (max-width: 730px) {
-  h1 {
-    font-size: 2em;
+  .greeting-text {
+    font-size: 3.5em;
+    text-align: center;
   }
 
   /* testing purposes */
@@ -398,7 +399,8 @@ label {
   }
 
   /* hide personal description */
-  .intro-text-wrapper {
+  .intro-text-wrapper,
+  .contact-info-wrapper {
     display: none;
   }
 }
