@@ -6,7 +6,7 @@
   "display": "browser",
   "icons": [
     {
-      "src": "/assets/icons/favicon.svg",
+      "src": "/assets/icons/favicon.png",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
