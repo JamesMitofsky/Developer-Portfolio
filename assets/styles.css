@@ -61,6 +61,10 @@ h2 {
   margin-right: 10px;
 }
 
+.contact-specifics > * {
+  margin: 0 20px;
+}
+
 a {
   text-decoration: none;
 }
@@ -189,7 +193,7 @@ section > * {
 .intro-text-wrapper {
   text-align: right;
   line-height: 2.5;
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 
 .contact-info-wrapper {
@@ -400,7 +404,7 @@ label {
 
   /* hide personal description */
   .intro-text-wrapper,
-  .contact-info-wrapper {
+  .contact-specifics {
     display: none;
   }
 }

@@ -109,7 +109,7 @@ function checkInitialScroll() {
       // show down-arrow
       arrow.classList.add("reveal-arrow");
     }
-  }, 8000);
+  }, 3000);
 }
 
 // reveals picture all at once rather than allowing a staggered load.
