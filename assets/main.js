@@ -1,155 +1,138 @@
-main()
+main();
 
 function main() {
+  animateSectionLoading();
 
-    animateSectionLoading()
+  // load portrait when it's ready
+  loadPortrait();
 
-    // load portrait when it's ready
-    loadPortrait()
+  // nudge the user if they're not scrolling
+  checkInitialScroll();
 
-    // nudge the user if they're not scrolling
-    checkInitialScroll()
-
-    // check if a form has been submitted on load
-    checkSubmissionStatus()
-    successStatus()
+  // check if a form has been submitted on load
+  checkSubmissionStatus();
+  successStatus();
 }
 
 function animateSectionLoading() {
-    /* Record all sections */
-    sections = document.querySelectorAll('section')
+  /* Record all sections */
+  sections = document.querySelectorAll("section");
 
-    /* Map out the children of each section */
-    allChildren = [...sections].map(section => section.children)
+  /* Map out the children of each section */
+  allChildren = [...sections].map((section) => section.children);
 
-    /* Create empty array for collecting all children */
-    tempArray = []
+  /* Create empty array for collecting all children */
+  tempArray = [];
 
-    /* Iterate through each section to collect their children */
-    allChildren.forEach(child => {
-        tempArray.push(Array.from(child))
-    })
+  /* Iterate through each section to collect their children */
+  allChildren.forEach((child) => {
+    tempArray.push(Array.from(child));
+  });
 
-    /* Flatten out the items in the array so they can all be accessed on the same plane. */
-    let finalArray = tempArray.flat()
+  /* Flatten out the items in the array so they can all be accessed on the same plane. */
+  let finalArray = tempArray.flat();
 
-    /* ENTRY ANIMATION */
+  /* ENTRY ANIMATION */
 
-    /* Create observer function to catch all elements for being watched */
-    const observer = new IntersectionObserver(entries => {
-        // Loop over the entries
-        entries.forEach(entry => {
-            // If the element is visible
-            if (entry.isIntersecting) {
-                // Add the animation class
-                entry.target.classList.add('reveal');
-            }
-        });
+  /* Create observer function to catch all elements for being watched */
+  const observer = new IntersectionObserver((entries) => {
+    // Loop over the entries
+    entries.forEach((entry) => {
+      // If the element is visible
+      if (entry.isIntersecting) {
+        // Add the animation class
+        entry.target.classList.add("reveal");
+      }
     });
+  });
 
-
-    finalArray.forEach(section => {
-        observer.observe(section)
-    })
-
+  finalArray.forEach((section) => {
+    observer.observe(section);
+  });
 }
 
 // indicate successful submission of contact form
 function successStatus() {
-
-    // add event listener to form
-    document
-        .getElementById('form')
-        .addEventListener('submit', (evt) => {
-
-            // mark success if form submitted
-            localStorage.setItem('submission', 'success')
-        })
+  // add event listener to form
+  document.getElementById("form").addEventListener("submit", (evt) => {
+    // mark success if form submitted
+    localStorage.setItem("submission", "success");
+  });
 }
 
 // check if form was successfully submitted
 function checkSubmissionStatus() {
-    var status = localStorage.getItem('submission')
+  var status = localStorage.getItem("submission");
 
-    // if appropriate, show success animation
-    if (status == 'success') {
+  // if appropriate, show success animation
+  if (status == "success") {
+    // remove local storage item
+    localStorage.removeItem("submission");
 
-        // remove local storage item
-        localStorage.removeItem('submission')
+    // notify success
+    let successMsg = document.getElementById("successMsg");
+    successMsg.classList.add("reveal-msg");
 
-        // notify success
-        let successMsg = document.getElementById('successMsg')
-        successMsg
-            .classList
-            .add('reveal-msg')
-
-        // hide success msg after 10 seconds
-        setTimeout(() => {
-            successMsg
-                .classList
-                .remove('reveal-msg')
-        }, 6000)
-    }
+    // hide success msg after 10 seconds
+    setTimeout(() => {
+      successMsg.classList.remove("reveal-msg");
+    }, 6000);
+  }
 }
 
 function checkInitialScroll() {
+  // prevent listener if already loaded past splash screen
+  // if (window.location.href != "https://www.jamestedesco.me/") { return }
 
-    // prevent listener if already loaded past splash screen
-    // if (window.location.href != "https://www.jamestedesco.me/") { return }
+  console.log("recognized location");
 
-    console.log('recognized location')
+  // listener type, function receiving notification, param options
+  window.addEventListener("scroll", runOnScroll, { passive: true });
 
-    // listener type, function receiving notification, param options
-    window.addEventListener("scroll", runOnScroll, { passive: true });
+  // find arrow element
+  let arrow = document.getElementById("nudge-arrow");
 
-    // find arrow element
-    let arrow = document.getElementById('nudge-arrow')
+  // set default state
+  let hasScrolled = false;
 
-    // set default state
-    let hasScrolled = false
+  function runOnScroll(evt) {
+    // indicate when scrolling has occured
+    hasScrolled = true;
 
-    function runOnScroll(evt) {
-        // indicate when scrolling has occured
-        hasScrolled = true
+    // reset arrow state if possible
+    arrow.classList.remove("reveal-arrow");
+  }
 
-        // reset arrow state if possible
-        arrow.classList.remove('reveal-arrow')
-    };
-
-    window.setTimeout(() => {
-
-        // nudge user after waiting
-        if (hasScrolled == false) {
-            // show down-arrow
-            arrow.classList.add('reveal-arrow')
-
-        }
-    }, 8000)
+  window.setTimeout(() => {
+    // nudge user after waiting
+    if (hasScrolled == false) {
+      // show down-arrow
+      arrow.classList.add("reveal-arrow");
+    }
+  }, 8000);
 }
 
 // reveals picture all at once rather than allowing a staggered load.
 function loadPortrait() {
+  // fetch image
+  let img = new Image();
+  img.classList.add("portrait-img");
+  img.id = "portrait";
+  img.src = "https://www.jamestedesco.me/assets/myself.png";
 
-    // fetch image
-    let img = new Image();
-    img.classList.add('portrait-img')
-    img.id = 'portrait'
-    img.src = "https://www.jamestedesco.me/assets/myself.png"
+  // remove the temporary classs
+  let portraitLink = document.getElementById("portrait-link");
 
-    // remove the temporary classs
-    let portraitLink = document.getElementById('portrait-link')
+  // detect img loaded in JS
+  img.onload = () => {
+    portraitLink.classList.remove("pre-portrait");
 
-    // detect img loaded in JS
-    img.onload = () => {
+    // replace in DOM
+    portraitLink.appendChild(img);
 
-        portraitLink.classList.remove('pre-portrait')
-
-        // replace in DOM
-        portraitLink.appendChild(img)
-
-        // slight delay to allow transition detection
-        window.setTimeout(() => {
-            img.classList.add('visible')
-        }, 100)
-    }
+    // slight delay to allow transition detection
+    window.setTimeout(() => {
+      img.classList.add("visible");
+    }, 100);
+  };
 }
