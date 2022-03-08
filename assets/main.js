@@ -92,62 +92,6 @@ function checkSubmissionStatus() {
     }
 }
 
-
-function sizePortraitOnMobile() {
-
-    window.addEventListener('resize', reportWindowSize);
-    window.addEventListener('load', reportWindowSize)
-
-    function reportWindowSize() {
-        // get window height from event
-        let windowHeight = document.documentElement.clientHeight
-        let windowWidth = document.documentElement.clientWidth
-
-
-        let header = document.getElementById('home')
-        let headerHeight = header.offsetHeight
-
-        if (headerHeight > windowHeight) {
-            // console.log('header height exceeds window height')
-        }
-
-
-
-
-
-        // if bigger than mobile, remove inline style
-        if (windowWidth < 730) {
-
-            console.log('small screen')
-
-            // find the height of the splash screen
-            let introWrapper = document.getElementById('intro-wrapper')
-            let boxHeight = introWrapper.offsetHeight
-            let computedStyles = getComputedStyle(introWrapper)
-            let marginTop = parseInt(computedStyles.marginTop)
-            let marginBottom = parseInt(computedStyles.marginBottom)
-            let wrapperHeight = boxHeight + marginTop + marginBottom
-
-            // calculate height for portrait
-            let correctedHeight = windowHeight - wrapperHeight
-            let portrait = document.getElementById('portrait-link')
-
-
-            // set heights
-            portrait.style.height = correctedHeight
-
-        } else {
-            console.log('larger screen')
-            let portrait = document.getElementById('portrait-link')
-
-            // on larger screens, make sure this inline styling is absent
-            portrait.removeAttribute('style')
-        }
-    }
-}
-
-
-
 function checkInitialScroll() {
 
     // prevent listener if already loaded past splash screen
@@ -158,10 +102,8 @@ function checkInitialScroll() {
     // listener type, function receiving notification, param options
     window.addEventListener("scroll", runOnScroll, { passive: true });
 
-
     // find arrow element
     let arrow = document.getElementById('nudge-arrow')
-
 
     // set default state
     let hasScrolled = false
@@ -174,7 +116,6 @@ function checkInitialScroll() {
         arrow.classList.remove('reveal-arrow')
     };
 
-
     window.setTimeout(() => {
 
         // nudge user after waiting
@@ -185,7 +126,6 @@ function checkInitialScroll() {
         }
     }, 8000)
 }
-
 
 // reveals picture all at once rather than allowing a staggered load.
 function loadPortrait() {
