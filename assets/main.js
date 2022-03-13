@@ -79,37 +79,42 @@ function checkSubmissionStatus() {
     }, 6000);
   }
 }
-
 function checkInitialScroll() {
-  // prevent listener if already loaded past splash screen
-  // if (window.location.href != "https://www.jamestedesco.me/") { return }
-
-  console.log("recognized location");
-
-  // listener type, function receiving notification, param options
-  window.addEventListener("scroll", runOnScroll, { passive: true });
-
   // find arrow element
   let arrow = document.getElementById("nudge-arrow");
 
-  // set default state
+  // assume user has not scrolled
   let hasScrolled = false;
 
-  function runOnScroll(evt) {
-    // indicate when scrolling has occured
+  // start listening for scroll event
+  // params summary: listener type, call function, control listener passivity -- research further
+  window.addEventListener(
+    "scroll",
+    () => {
+      hideArrow();
+    },
+    true
+  );
+
+  // if there's no scroll after 3 secs, show the arrow
+  window.setTimeout(() => {
+    // nudge user after waiting
+    if (hasScrolled === false) {
+      // show down-arrow
+      arrow.classList.add("reveal-arrow");
+    }
+  }, 3000);
+
+  // if a scroll is ever detected, hide the arrow
+  function hideArrow() {
+    console.log("scroll detected");
+
+    // change state of scroll variable (located in scope above this one)
     hasScrolled = true;
 
     // reset arrow state if possible
     arrow.classList.remove("reveal-arrow");
   }
-
-  window.setTimeout(() => {
-    // nudge user after waiting
-    if (hasScrolled == false) {
-      // show down-arrow
-      arrow.classList.add("reveal-arrow");
-    }
-  }, 3000);
 }
 
 // reveals picture all at once rather than allowing a staggered load.
