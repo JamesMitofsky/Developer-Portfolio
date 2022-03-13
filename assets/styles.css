@@ -6,10 +6,8 @@
 html,
 body {
   margin: 0;
-  height: 100vh;
   font-family: "Fira Code", sans-serif;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -35,7 +33,6 @@ h2 {
   color: orange;
   text-decoration: none;
   font-weight: bolder;
-  margin-top: 30px;
   margin-bottom: 10px;
   margin-left: -20px;
 }
@@ -99,7 +96,7 @@ a {
 }
 
 section {
-  margin: 40px 0;
+  /* padding-bottom: 40px; */
 }
 
 /* ANIMATION */
@@ -133,7 +130,7 @@ section > * {
   position: relative;
 }
 
-#portrait-link {
+#portrait-of-james {
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -347,7 +344,7 @@ label {
 }
 
 @media only screen and (min-width: 730px) {
-  .portrait-link {
+  .portrait-of-james {
     align-items: flex-end;
   }
 }
