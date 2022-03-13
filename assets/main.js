@@ -81,7 +81,7 @@ function checkSubmissionStatus() {
 }
 function checkInitialScroll() {
   // find arrow element
-  let arrow = document.getElementById("nudge-arrow");
+  let arrow = document.getElementById("visit-the-about-section");
 
   // assume user has not scrolled
   let hasScrolled = false;
@@ -122,11 +122,12 @@ function loadPortrait() {
   // fetch image
   let img = new Image();
   img.classList.add("portrait-img");
+  img.alt = "Portrait of me, James Tedesco.";
   img.id = "portrait";
   img.src = "/assets/myself.png";
 
   // remove the temporary classs
-  let portraitLink = document.getElementById("portrait-link");
+  let portraitLink = document.getElementById("portrait-of-james");
 
   // detect img loaded in JS
   img.onload = () => {

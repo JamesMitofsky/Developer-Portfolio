@@ -164,7 +164,7 @@ section > * {
   z-index: 1;
 }
 
-#nudge-arrow {
+#visit-the-about-section {
   height: 65px;
   animation: MoveUpDown 5s ease infinite;
   fill: #3c73de;
@@ -177,7 +177,7 @@ section > * {
   visibility: hidden;
 }
 
-#nudge-arrow.reveal-arrow {
+#visit-the-about-section.reveal-arrow {
   opacity: 1;
   visibility: visible;
 }
@@ -376,7 +376,7 @@ label {
     margin-top: 0;
   }
 
-  #nudge-arrow {
+  #visit-the-about-section {
     position: absolute;
     fill: white;
     bottom: 40px;
