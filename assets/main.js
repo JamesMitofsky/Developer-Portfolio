@@ -123,7 +123,7 @@ function loadPortrait() {
   let img = new Image();
   img.classList.add("portrait-img");
   img.id = "portrait";
-  img.src = "https://www.jamestedesco.me/assets/myself.png";
+  img.src = "/assets/myself.png";
 
   // remove the temporary classs
   let portraitLink = document.getElementById("portrait-link");
