@@ -16,17 +16,26 @@ npm i && npm run serve
 
 ## Technologies
 
-### MX Improv — Email
+### Netlify
 
-Create email addresses matching the domain using [Improv MX](https://improvmx.com). This allows for receiving from any address type, but can also permit sending if [integrated with Gmail](https://improvmx.com/guides/send-emails-using-gmail/).
-
-### Netlify Forms
+#### Forms
 
 Use [Netlify form submissions](http://xahlee.info) for collecting user responses.
+
+#### Redirecting
+
+- [Syntax for redirect file.](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file)
+- [Custom 404 Handling.](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling)
 
 ### Eleventy — SSG
 
 Use [Eleventy](https://www.11ty.dev/docs/getting-started/) for building a Statically Generated Site.
+
+#### Nunjucks
+
+[Find the docs here.](https://mozilla.github.io/nunjucks/) Nunjucks aren't required by Eleventy, but they're my preferred templating language.
+
+I enjoyed reading [this article](https://css-tricks.com/killer-features-of-nunjucks/) by CSS Tricks for a few quick tips.
 
 #### Ignoring Files
 
@@ -34,11 +43,9 @@ Eleventy has its own system for ignoring files called `.eleventyignore`. It's li
 
 However, any file in your `.gitignore` file will likewise not be processed in the build step.
 
-### Nunjucks — Templating
+### MX Improv — Email
 
-[Find the docs here.](https://mozilla.github.io/nunjucks/) Nunjucks aren't required by Eleventy, but they're my preferred templating language.
-
-I enjoyed reading [this article](https://css-tricks.com/killer-features-of-nunjucks/) by CSS Tricks for a few quick tips.
+Create email addresses matching the domain using [Improv MX](https://improvmx.com). This allows for receiving from any address type, but can also permit sending if [integrated with Gmail](https://improvmx.com/guides/send-emails-using-gmail/).
 
 ## License
 
