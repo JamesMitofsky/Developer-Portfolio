@@ -8,7 +8,7 @@ This project requires NPM; install it by [following these directions](https://do
 
 Then run this script to install all packages and start a local server.
 
-```
+```console
 npm i && npm run serve
 ```
 
@@ -27,6 +27,12 @@ Use [Netlify form submissions](http://xahlee.info) for collecting user responses
 ### Eleventy — SSG
 
 Use [Eleventy](https://www.11ty.dev/docs/getting-started/) for building a Statically Generated Site.
+
+#### Ignoring Files
+
+Eleventy has its own system for ignoring files called `.eleventyignore`. It's like `.gitignore` but will only prevent files from entering the build step, not from actually being committed to git.
+
+However, any file in your `.gitignore` file will likewise not be processed in the build step.
 
 ### Nunjucks — Templating
 
