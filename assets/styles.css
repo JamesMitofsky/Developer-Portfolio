@@ -95,6 +95,23 @@ a {
   height: 106%;
 }
 
+.page-404 {
+  background-color: #f9e3b5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bg-blue {
+  background-color: #3c73de;
+}
+
+.bg-gold {
+  background: rgb(255, 176, 30);
+}
+
 /* ANIMATION */
 
 /* element to animate */
@@ -302,18 +319,17 @@ label {
   margin: 20px;
   transition: all 0.2s ease;
   display: flex;
-  background: rgb(255, 176, 30);
   color: white;
   font-size: 1em;
   font-weight: bolder;
 }
 
-.submit-btn:hover {
+.submit-btn.bg-gold:hover {
   box-shadow: 0px 0px 10px 0px white;
   cursor: pointer;
 }
 
-.submit-btn:active {
+.submit-btn.bg-gold:active {
   box-shadow: inset 0px 0px 10px 8px #f47c00;
 }
 
