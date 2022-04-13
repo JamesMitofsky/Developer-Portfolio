@@ -44,7 +44,7 @@ layout: default-layout
     <article class="card">
       <h3 class="card-subject">{{ card.data.title }}</h3>
       <div class="card-content">
-        {{ card.data.content | safe }}
+        {{ card.templateContent | safe }}
       </div>
     </article>
     {%- endfor -%}
