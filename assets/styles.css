@@ -134,18 +134,57 @@ section > * {
   transform: translate(0) scale(1);
 }
 
-.header-card {
+.hero-card {
   background-color: #f9e3b5;
   box-shadow: 0px 6px 20px 23px #f9e3b5;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-areas: "hero-text hero-text" "hero-subtext hero-image";
   height: 100vh;
   margin-bottom: 70px;
   position: relative;
+  /* lower index beneath the svg.blob to keep it visible */
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* ALL SVG WRAPPERS */
+.hero-card .blob-wrapper {
+  position: absolute;
+  transform-origin: center center;
+  z-index: -1;
+  transform: translate(50%, -50%);
+  right: 0;
+  top: 0;
+}
+
+/* UPPER RIGHT SVG */
+.hero-card svg {
+  height: 1500px;
+  animation: rotating infinite 40s linear;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-text {
+  grid-area: hero-text;
+  color: #3c73de;
+  font-weight: bolder;
+  margin: 8px 0;
+}
+
+.hero-subtext {
+  grid-area: hero-subtext;
 }
 
 #portrait-of-james {
+  grid-area: hero-image;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -194,14 +233,45 @@ section > * {
   visibility: visible;
 }
 
+.down-arrow svg {
+  height: 35px;
+  width: auto;
+  fill: white;
+  margin-top: 10px;
+  padding: 0;
+}
+
+a.hero-btn {
+  padding: 0 3px;
+  margin: 0;
+  font-size: 1.2em;
+  animation: Pulse 5s ease infinite;
+}
+
+a.hero-btn:hover {
+  animation-play-state: paused;
+}
+
+@keyframes Pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes MoveUpDown {
   0%,
   100% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 
   50% {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
 }
 
@@ -213,22 +283,23 @@ section > * {
   min-height: fit-content;
 }
 
-.greeting-text {
-  color: #3c73de;
-  font-weight: bolder;
-  text-align: end;
-  margin: 8px 0;
+.intro-text-wrapper {
+  /* text-align: right; */
+  margin-top: 80px;
+  line-height: 1.2em;
+  font-size: 1.2em;
 }
 
-.intro-text-wrapper {
-  text-align: right;
-  line-height: 2.5;
-  font-size: 1.7em;
+.intro-text-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6em;
 }
 
 .contact-info-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
   flex-wrap: wrap;
   min-height: fit-content;
@@ -321,6 +392,8 @@ label {
   margin: 20px;
   transition: all 0.2s ease;
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-size: 1em;
   font-weight: bolder;
@@ -352,7 +425,7 @@ label {
 }
 
 @media only screen and (min-width: 1600px) {
-  .header-card {
+  .hero-card {
     padding: 0 10%;
   }
 }
@@ -366,17 +439,11 @@ label {
 @media only screen and (max-width: 730px) {
   .greeting-text {
     font-size: 2.7em;
-    text-align: center;
   }
 
   /* testing purposes */
   .general-intro-wrapper div > * {
     margin: 5px 0;
-  }
-
-  .header-card {
-    flex-direction: column-reverse;
-    justify-content: space-between;
   }
 
   .contact-info-wrapper img {
