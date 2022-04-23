@@ -150,6 +150,7 @@ section > * {
   grid-area: hero-text;
   color: #3c73de;
   font-weight: bolder;
+  font-size: min(4.5em, 17vw);
   margin: 8px 0;
   z-index: 1;
 }
@@ -167,12 +168,13 @@ section > * {
   z-index: 1;
 }
 
-a.hero-btn {
+.hero-btn {
   padding: 10px;
-  margin-bottom: 9vh;
+  margin-bottom: 13vh;
   font-size: 1.2em;
   color: white;
   animation: Pulse 5s ease infinite;
+  display: flex;
   width: fit-content;
   height: fit-content;
   box-shadow: 1px 2px 4px 1px #002d83ad;
@@ -236,6 +238,7 @@ a.hero-btn:hover {
   justify-content: center;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 .pre-portrait {
@@ -451,6 +454,14 @@ label {
 @media only screen and (max-width: 730px) {
   .greeting-text {
     font-size: 2.7em;
+  }
+
+  .hero-card {
+    grid-template-areas: "hero-text" "hero-subtext" "hero-btn" "hero-image";
+  }
+
+  .hero-btn {
+    margin-bottom: 1vh;
   }
 
   /* testing purposes */
