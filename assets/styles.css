@@ -142,8 +142,6 @@ section > * {
   height: 100vh;
   margin-bottom: 70px;
   position: relative;
-  /* lower index beneath the svg.blob to keep it visible */
-  z-index: -2;
   overflow: hidden;
 }
 
@@ -152,17 +150,18 @@ section > * {
   color: #3c73de;
   font-weight: bolder;
   margin: 8px 0;
+  z-index: 1;
 }
 
 .hero-subtext {
   grid-area: hero-subtext;
+  z-index: 1;
 }
 
 /* ALL SVG WRAPPERS */
 .blob-wrapper {
   position: absolute;
   transform-origin: center center;
-  z-index: -1;
 }
 
 /* move the wrapper to the upper right of the viewport */
@@ -252,10 +251,10 @@ section > * {
 }
 
 a.hero-btn {
-  padding: 0 3px;
   margin: 0;
   font-size: 1.2em;
   animation: Pulse 5s ease infinite;
+  z-index: 1;
 }
 
 a.hero-btn:hover {
