@@ -215,6 +215,7 @@ section > * {
   opacity: 0;
   transform: translateY(100px);
   transition: all 2s ease;
+  object-fit: contain;
 }
 
 #portrait-shadow {
