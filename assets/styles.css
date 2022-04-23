@@ -439,11 +439,11 @@ label {
   padding: 20px;
 }
 
-@media only screen and (min-width: 1600px) {
+/* @media only screen and (min-width: 1600px) {
   .hero-card {
     padding: 0 10%;
   }
-}
+} */
 
 @media only screen and (min-width: 730px) {
   .portrait-of-james {
@@ -458,6 +458,16 @@ label {
 
   .hero-card {
     grid-template-areas: "hero-text" "hero-subtext" "hero-btn" "hero-image";
+    padding: 0;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-btn-wrapper {
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   .hero-btn {
