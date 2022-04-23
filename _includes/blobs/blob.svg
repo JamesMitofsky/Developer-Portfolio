@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <svg class="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path fill="#ED9A8E" transform="translate(100 100)" >
+  <path transform="translate(100 100)" >
      <animate attributeName="d"
      dur="25s"
      repeatCount="indefinite"

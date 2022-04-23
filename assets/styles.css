@@ -148,19 +148,31 @@ section > * {
 }
 
 /* ALL SVG WRAPPERS */
-.hero-card .blob-wrapper {
+.blob-wrapper {
   position: absolute;
   transform-origin: center center;
   z-index: -1;
+}
+
+/* move the wrapper to the upper right of the viewport */
+.blob-wrapper {
   transform: translate(50%, -50%);
   right: 0;
   top: 0;
+  fill: #ed9a8e;
 }
 
-/* UPPER RIGHT SVG */
+.blob-wrapper:last-of-type {
+  transform: translate(-50%, 30%);
+  left: 0;
+  bottom: 0;
+  fill: #ef6c6c;
+}
+
+/* rotate all SVGs */
 .hero-card svg {
   height: 1500px;
-  animation: rotating infinite 40s linear;
+  animation: rotating infinite 100s linear;
 }
 
 @keyframes rotating {
