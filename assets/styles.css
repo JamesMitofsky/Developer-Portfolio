@@ -140,7 +140,7 @@ section > * {
   display: grid;
   grid-template-areas: "hero-text hero-text" "hero-subtext hero-image" "hero-btn hero-image";
   height: 100vh;
-  padding-left: 30px;
+  padding-left: 70px;
   margin-bottom: 70px;
   position: relative;
   overflow: hidden;
@@ -151,7 +151,6 @@ section > * {
   color: #3c73de;
   font-weight: bolder;
   font-size: min(4.5em, 17vw);
-  margin: 8px 0;
   z-index: 1;
 }
 
