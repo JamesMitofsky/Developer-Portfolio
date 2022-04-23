@@ -1,13 +1,10 @@
 main();
 
 function main() {
-  animateSectionLoading();
-
   // load portrait when it's ready
   loadPortrait();
 
-  // nudge the user if they're not scrolling
-  checkInitialScroll();
+  animateSectionLoading();
 
   // check if a form has been submitted on load
   checkSubmissionStatus();
@@ -77,43 +74,6 @@ function checkSubmissionStatus() {
     setTimeout(() => {
       successMsg.classList.remove("reveal-msg");
     }, 6000);
-  }
-}
-function checkInitialScroll() {
-  // find arrow element
-  let arrow = document.getElementById("visit-the-about-section");
-
-  // assume user has not scrolled
-  let hasScrolled = false;
-
-  // start listening for scroll event
-  // params summary: listener type, call function, control listener passivity -- research further
-  window.addEventListener(
-    "scroll",
-    () => {
-      hideArrow();
-    },
-    true
-  );
-
-  // if there's no scroll after 3 secs, show the arrow
-  window.setTimeout(() => {
-    // nudge user after waiting
-    if (hasScrolled === false) {
-      // show down-arrow
-      arrow.classList.add("reveal-arrow");
-    }
-  }, 3000);
-
-  // if a scroll is ever detected, hide the arrow
-  function hideArrow() {
-    console.log("scroll detected");
-
-    // change state of scroll variable (located in scope above this one)
-    hasScrolled = true;
-
-    // reset arrow state if possible
-    arrow.classList.remove("reveal-arrow");
   }
 }
 
