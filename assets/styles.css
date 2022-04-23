@@ -138,8 +138,9 @@ section > * {
   background-color: #f9e3b5;
   box-shadow: 0px 6px 20px 23px #f9e3b5;
   display: grid;
-  grid-template-areas: "hero-text hero-text" "hero-subtext hero-image" "hero-subtext hero-image" "hero-btn hero-image";
+  grid-template-areas: "hero-text hero-text" "hero-subtext hero-image" "hero-btn hero-image";
   height: 100vh;
+  padding-left: 30px;
   margin-bottom: 70px;
   position: relative;
   overflow: hidden;
@@ -150,14 +151,47 @@ section > * {
   color: #3c73de;
   font-weight: bolder;
   margin: 8px 0;
-  margin-left: 20px;
   z-index: 1;
 }
 
 .hero-subtext {
   grid-area: hero-subtext;
-  margin-left: 20px;
   z-index: 1;
+  height: 100%;
+}
+
+.hero-btn-wrapper {
+  grid-area: hero-btn;
+  display: flex;
+  align-items: end;
+  z-index: 1;
+}
+
+a.hero-btn {
+  padding: 10px;
+  margin-bottom: 9vh;
+  font-size: 1.2em;
+  color: white;
+  animation: Pulse 5s ease infinite;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 1px 2px 4px 1px #002d83ad;
+}
+
+a.hero-btn:hover {
+  animation-play-state: paused;
+}
+
+@keyframes Pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* ALL SVG WRAPPERS */
@@ -251,46 +285,6 @@ section > * {
   fill: white;
   margin-top: 10px;
   padding: 0;
-}
-
-a.hero-btn {
-  grid-area: hero-btn;
-  padding: 10px;
-  margin: 10px;
-  font-size: 1.2em;
-  color: white;
-  animation: Pulse 5s ease infinite;
-  width: fit-content;
-  height: fit-content;
-  box-shadow: 1px 2px 4px 1px #002d83ad;
-  z-index: 1;
-}
-
-a.hero-btn:hover {
-  animation-play-state: paused;
-}
-
-@keyframes Pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes MoveUpDown {
-  0%,
-  100% {
-    transform: translateY(-5px);
-  }
-
-  50% {
-    transform: translateY(5px);
-  }
 }
 
 .general-intro-wrapper {
