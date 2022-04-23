@@ -147,6 +147,17 @@ section > * {
   overflow: hidden;
 }
 
+.hero-text {
+  grid-area: hero-text;
+  color: #3c73de;
+  font-weight: bolder;
+  margin: 8px 0;
+}
+
+.hero-subtext {
+  grid-area: hero-subtext;
+}
+
 /* ALL SVG WRAPPERS */
 .blob-wrapper {
   position: absolute;
@@ -171,7 +182,7 @@ section > * {
 
 /* rotate all SVGs */
 .hero-card svg {
-  height: 1500px;
+  height: 100vw;
   animation: rotating infinite 100s linear;
 }
 
@@ -182,17 +193,6 @@ section > * {
   to {
     transform: rotate(360deg);
   }
-}
-
-.hero-text {
-  grid-area: hero-text;
-  color: #3c73de;
-  font-weight: bolder;
-  margin: 8px 0;
-}
-
-.hero-subtext {
-  grid-area: hero-subtext;
 }
 
 #portrait-of-james {
@@ -209,8 +209,6 @@ section > * {
 }
 
 .portrait-img {
-  object-fit: contain;
-  margin-top: 25px;
   /* change on-load */
   visibility: hidden;
   opacity: 0;
