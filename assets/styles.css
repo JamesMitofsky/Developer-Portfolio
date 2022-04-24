@@ -33,8 +33,6 @@ h2 {
   color: orange;
   text-decoration: none;
   font-weight: bolder;
-  margin-bottom: 10px;
-  margin-left: -20px;
 }
 
 .section-header h2 {
@@ -52,10 +50,6 @@ h2 {
 
 .section-header:hover {
   text-decoration: underline #3db7cf;
-}
-
-.section-header h2 {
-  margin-right: 10px;
 }
 
 .contact-specifics > * {
@@ -357,6 +351,8 @@ img.visible {
 .text-section p {
   line-height: 1.2em;
   font-size: 1.1em;
+  margin: 0;
+  margin-bottom: 1.4em;
 }
 
 .text-section span {
@@ -500,10 +496,6 @@ label {
 
   h2 {
     font-size: 1em;
-  }
-
-  .section-header {
-    margin-left: 0;
   }
 
   .simple-list {
