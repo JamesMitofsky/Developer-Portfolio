@@ -447,13 +447,24 @@ label {
   }
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 600px) {
   .greeting-text {
     font-size: 2.7em;
   }
 
   .hero-card {
     grid-template-areas: "hero-text" "hero-subtext" "hero-btn" "hero-image";
+    padding: 0;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-btn {
