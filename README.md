@@ -46,15 +46,12 @@ However, any file in your `.gitignore` file will likewise not be processed in th
 ### MX Improv — Email
 
 Create email addresses matching the domain using [Improv MX](https://improvmx.com). This allows for receiving from any address type, but can also permit sending if [integrated with Gmail](https://improvmx.com/guides/send-emails-using-gmail/).
-
-## License
-
-MIT
-
----
-
-## Explorations
+## Learning Documentation
 
 ### The Difference: `content` vs. `templateContent`
 
 Why will the body of my markdown docs not render correctly unless the collection item is referred to with `templateContent`? Formerly, `content` seemed to work. I'm wondering if this has to do with the default settings for Eleventy. Perhaps if these were markdown files (rather than njk, as projects, technologies, and education currently are), Eleventy would acknowledge their body content when called with `item.content`.
+
+## License
+
+MIT
