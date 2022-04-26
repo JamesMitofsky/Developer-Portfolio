@@ -1,4 +1,4 @@
-# Developer Portfolio
+# James Tedesco's Dev Portfolio
 
 This is the point of truth for the work, passions, and code-related pursuits of James Tedesco.
 
