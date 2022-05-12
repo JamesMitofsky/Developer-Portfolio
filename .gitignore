@@ -119,3 +119,5 @@ dist
 /cards-content/*
 
 /_site
+
+.DS_Store
