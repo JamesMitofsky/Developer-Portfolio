@@ -140,6 +140,21 @@ section > * {
   overflow: hidden;
 }
 
+header:after {
+  content: "";
+  position: absolute;
+  height: 7px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(249, 227, 181, 1) 0%,
+    rgba(249, 227, 181, 0.3239889705882353) 50%,
+    rgba(249, 227, 181, 0) 100%
+  );
+  bottom: 0;
+  z-index: 1;
+}
+
 .hero-text {
   grid-area: hero-text;
   color: #3c73de;
