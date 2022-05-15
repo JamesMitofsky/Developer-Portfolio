@@ -79,25 +79,27 @@ function checkSubmissionStatus() {
 
 // reveals picture all at once rather than allowing a staggered load.
 function loadPortrait() {
-  // fetch image
+  // build image object
   let img = new Image();
   img.classList.add("portrait-img");
   img.alt = "Portrait of me, James Tedesco.";
   img.id = "portrait";
   img.src = "/assets/myself.webp";
 
-  // remove the temporary classs
+  // locate where portrait should go
   let portraitLink = document.getElementById("portrait-of-james");
 
-  // detect img loaded in JS
+  // detect img loaded
   img.onload = () => {
+    // remove the temporary class
     portraitLink.classList.remove("pre-portrait");
 
-    // replace in DOM
+    // add the actual img element inside the existing div
     portraitLink.appendChild(img);
 
     // slight delay to allow transition detection
     window.setTimeout(() => {
+      // animate entry of portrait
       img.classList.add("visible");
     }, 100);
   };
