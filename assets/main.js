@@ -84,7 +84,7 @@ function loadPortrait() {
   img.classList.add("portrait-img");
   img.alt = "Portrait of me, James Tedesco.";
   img.id = "portrait";
-  img.src = "/assets/myself.webp";
+  img.src = "/assets/pics-of-james/JamesTedesco-portrait-2022.webp";
 
   // locate where portrait should go
   let portraitLink = document.getElementById("portrait-of-james");

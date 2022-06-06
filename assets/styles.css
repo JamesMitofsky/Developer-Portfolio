@@ -1,3 +1,7 @@
+:root {
+  --hero-card-bg: hsl(40deg 100% 80%);
+}
+
 @font-face {
   font-family: "Fira Code";
   src: url("assets/FiraCode-VariableFont_wght.ttf") format("wght");
@@ -129,8 +133,8 @@ section > * {
 }
 
 .hero-card {
-  background-color: #f9e3b5;
-  box-shadow: 0px 6px 20px 23px #f9e3b5;
+  background-color: var(--hero-card-bg);
+  box-shadow: 0px 6px 20px 23px var(--hero-card-bg);
   display: grid;
   grid-template-areas: "hero-text hero-text" "hero-btn hero-image" "hero-btn hero-image";
   height: 100vh;
@@ -147,7 +151,7 @@ header:after {
   width: 100%;
   background: linear-gradient(
     0deg,
-    rgba(249, 227, 181, 1) 0%,
+    var(--hero-card-bg) 0%,
     rgba(249, 227, 181, 0.3239889705882353) 50%,
     rgba(249, 227, 181, 0) 100%
   );
@@ -257,6 +261,9 @@ a.hero-btn:hover {
   transform: translateY(100px);
   transition: all 2s ease;
   object-fit: contain;
+  height: auto;
+  max-width: 800px;
+  width: -webkit-fill-available;
 }
 
 #portrait-shadow {
