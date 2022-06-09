@@ -91,9 +91,6 @@ function loadPortrait() {
 
   // detect img loaded
   img.onload = () => {
-    // remove the temporary class
-    portraitLink.classList.remove("pre-portrait");
-
     // add the actual img element inside the existing div
     portraitLink.appendChild(img);
 

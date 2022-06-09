@@ -21,6 +21,7 @@ body {
 
 h1 {
   font-size: 4em;
+  margin: 0.3em 0;
 }
 
 /* section styles */
@@ -177,7 +178,7 @@ header:after {
 
 .hero-btn {
   padding: 10px;
-  margin-bottom: 13vh;
+  margin-bottom: 1em;
   font-size: 1.2em;
   color: white;
   animation: Pulse 5s ease infinite;
@@ -248,22 +249,23 @@ a.hero-btn:hover {
   z-index: 1;
 }
 
-.pre-portrait {
-  height: calc(100% - 25px);
-  padding-right: calc(57vh - 25px);
-  height: inherit;
-}
-
 .portrait-img {
-  /* change on-load */
   visibility: hidden;
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 2s ease;
+  /* start image off-screen */
+  transform: translateY(30px);
+  transition: opacity 2s ease, transform 2s ease;
   object-fit: contain;
   height: auto;
   max-width: 800px;
   width: -webkit-fill-available;
+}
+
+/* prevents FOUC --> added via JS */
+img.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #portrait-shadow {
@@ -345,13 +347,6 @@ a.hero-btn:hover {
 
 .contact-info-wrapper img:active {
   filter: drop-shadow(3px 3px 5px #3c73de);
-}
-
-/* prevents FOUC --> added via JS */
-img.visible {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* overall */
@@ -458,13 +453,13 @@ label {
   }
 }
 
-@media only screen and (min-width: 730px) {
-  .portrait-of-james {
-    align-items: flex-end;
+@media only screen and (min-width: 700px) {
+  .hero-btn {
+    margin-bottom: 13vh;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .greeting-text {
     font-size: 2.7em;
   }
@@ -482,10 +477,6 @@ label {
   .hero-btn-wrapper {
     justify-content: flex-start;
     align-items: center;
-  }
-
-  .hero-btn {
-    margin-bottom: 1vh;
   }
 
   /* testing purposes */
