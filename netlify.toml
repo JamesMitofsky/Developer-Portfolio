@@ -2,3 +2,7 @@
   from = "/*"
   to = "/404"
   status = 404
+
+  from = "/James-Tedesc-Cover-Letter-Dailymotion"
+  to = "/https://bit.ly/JTCoverLetterDM"
+  status = 200
