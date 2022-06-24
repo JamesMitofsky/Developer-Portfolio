@@ -1,9 +1,9 @@
 [[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
-
-[[redirects]]
   from = "/Dailymotion-Cover-Letter"
   to = "/https://bit.ly/JTCoverLetterDM"
   status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
