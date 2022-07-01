@@ -3,6 +3,12 @@
   to = "https://bit.ly/JTCoverLetterDM"
 
 [[redirects]]
+from = "/Dailymotion_Frontend-Dev"
+to = "https://bit.ly/Dailymotion-FrontEndDev"
+
+
+
+[[redirects]]
   from = "/*"
   to = "/404"
   status = 404
