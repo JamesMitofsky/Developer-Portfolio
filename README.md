@@ -1,6 +1,6 @@
-# James Tedesco's Dev Portfolio
+# James Mitofsky's Dev Portfolio
 
-This is the point of truth for the work, passions, and code-related pursuits of James Tedesco.
+This is the point of truth for the work, passions, and code-related pursuits of James Mitofsky.
 
 ## Installing / Getting Started
 
@@ -46,6 +46,7 @@ However, any file in your `.gitignore` file will likewise not be processed in th
 ### MX Improv — Email
 
 Create email addresses matching the domain using [Improv MX](https://improvmx.com). This allows for receiving from any address type, but can also permit sending if [integrated with Gmail](https://improvmx.com/guides/send-emails-using-gmail/).
+
 ## Learning Documentation
 
 ### The Difference: `content` vs. `templateContent`

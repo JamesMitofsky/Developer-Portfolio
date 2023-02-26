@@ -82,9 +82,9 @@ function loadPortrait() {
   // build image object
   let img = new Image();
   img.classList.add("portrait-img");
-  img.alt = "Portrait of me, James Tedesco.";
+  img.alt = "Portrait of me, James Mitofsky.";
   img.id = "portrait";
-  img.src = "/assets/pics-of-james/JamesTedesco-portrait-2022.png";
+  img.src = "/assets/pics-of-james/JamesMitofsky-portrait-2022.png";
 
   // locate where portrait should go
   let portraitLink = document.getElementById("portrait-of-james");

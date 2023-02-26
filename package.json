@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamesTedesco/personal-website.git"
+    "url": "git+https://github.com/JamesMitofsky/personal-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JamesTedesco/personal-website/issues"
+    "url": "https://github.com/JamesMitofsky/personal-website/issues"
   },
-  "homepage": "https://github.com/JamesTedesco/personal-website#readme",
+  "homepage": "https://github.com/JamesMitofsky/personal-website#readme",
   "dependencies": {
     "debug": "^4.1.1"
   },
