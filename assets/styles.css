@@ -34,27 +34,26 @@ h2 {
   display: flex;
   align-items: center;
   width: fit-content;
-  font-size: 2em;
+  font-size: 1.5em;
   color: orange;
   text-decoration: none;
   font-weight: bolder;
+  padding-top: 2em;
+  padding-bottom: 0.3em;
 }
 
 .section-header h2 {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .section-header svg {
-  height: 1.5em;
+  height: 1em;
   width: auto;
-}
-
-.section-header:hover svg {
-  fill: #3db7cf;
+  fill: orange;
 }
 
 .section-header:hover {
-  text-decoration: underline #3db7cf;
+  text-decoration: underline;
 }
 
 .contact-specifics > * {
@@ -420,7 +419,6 @@ label {
   color: white;
   font-size: 1em;
   font-weight: bolder;
-  box-shadow: 5.2px 8px 5px rgb(164, 164, 164);
 }
 
 .submit-btn:active {

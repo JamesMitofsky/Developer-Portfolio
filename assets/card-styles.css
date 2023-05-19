@@ -1,5 +1,5 @@
 .experience-level {
-  background-color: #ff9a36;
+  background-color: #3c73de;
   color: white;
   width: fit-content;
   font-weight: bolder;
@@ -10,7 +10,7 @@
 
 hr {
   margin: 0;
-  border-top: 2px dashed black;
+  border: 1px dashed #3c73de;
 }
 
 .simple-list {

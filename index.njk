@@ -4,41 +4,33 @@ layout: default-layout
 
 {% include "_head.html" %}
 <div class="container">
-  <section id="about">
-    <a class="section-header" href="#about">
-      <h2>About</h2>
+  <section id="bio">
+    <a class="section-header" href="#bio">
       {% include "icons/chain-link.svg" %}
+      <h2>Bio</h2>
     </a>
     <article class="text-section">
       <p>
-        It's my passion to build intuitive and exciting user experiences, and
-        human-centered design is a staple in my work. I've been the principal
-        developer on projects where end users include non-profits, university
-        students, and the general public. See for yourself on
+        It's my passion to build intuitive and exciting user experiences. I've
+        been the principal developer on projects where end users include
+        non-profits, universities, and the general public. Take a look at my
         <span
-          ><a class="link" target="_blank" href="/assets/cv.pdf"
-            >my C.V.</a
-          ></span
+          ><a class="link" target="_blank" href="/assets/cv.pdf">portfolio</a
+          >.</span
         >
       </p>
       <p>
-        I'm interested in lightweight development with the
-        <span>JAMstack</span> and its emergent intersection between front and
-        back-end development. I've completed projects requiring SSG deployment,
-        browser extensions, serverless functions, and serverless databases.
-      </p>
-      <p>
-        I'm currently seeking a full-time position —
-        <span>
-          <a class="link" href="#contact">let's get in touch!</a>
-        </span>
+        More than just dynamic web-apps, I'm interested in building performant
+        sites, boosting user retention. To this end, I've deployed my fair share
+        of statically generated sites (SSGs). I'm currently interested in
+        Next.js & Qwik.
       </p>
     </article>
   </section>
   <section id="summary">
-    <a class="section-header" href="#summary">
-      <h2>Summary</h2>
+    <a class="section-header" href="#technologies">
       {% include "icons/chain-link.svg" %}
+      <h2>Technologies</h2>
     </a>
     {# Build cards #} {%- for card in collections.card -%}
     <article class="card">
@@ -49,10 +41,10 @@ layout: default-layout
     </article>
     {%- endfor -%}
   </section>
-  <section id="contact">
+  <section id="links">
     <a class="section-header" href="#contact">
-      <h2>Contact</h2>
       {% include "icons/chain-link.svg" %}
+      <h2>Links</h2>
     </a>
     <article class="text-section">
       <ul class="icons-list">
@@ -86,19 +78,14 @@ layout: default-layout
             <div>/JamesMitofsky</div>
           </a>
         </li>
-        <li>
-          <a
-            class="icon-item link"
-            target="_blank"
-            href="https://twitter.com/JamesMitofsky"
-          >
-            <img src="/assets/icons/twitter.svg" alt="" />
-            <div>/JamesMitofsky</div>
-          </a>
-        </li>
       </ul>
     </article>
-    <div id="successMsg">Your submission was received!</div>
+  </section>
+  <section id="contact">
+    <a class="section-header" href="#contact">
+      {% include "icons/chain-link.svg" %}
+      <h2>Contact</h2>
+    </a>
     <article class="form-wrapper">
       <form
         id="form"
@@ -129,6 +116,7 @@ layout: default-layout
         </label>
         <button class="submit-btn bg-gold" type="submit">Submit</button>
       </form>
+      <div id="successMsg">Your submission was received!</div>
     </article>
   </section>
 </div>
