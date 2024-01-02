@@ -6,6 +6,10 @@
   from = "/Dailymotion_Frontend-Dev"
   to = "https://bit.ly/dmCoverLetterFE"
 
+[[redirects]]
+  from = "/strava"
+  to = "https://www.strava.com/athletes/jamesmit"
+
 
 
 [[redirects]]
