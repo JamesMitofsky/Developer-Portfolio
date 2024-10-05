@@ -9,30 +9,31 @@ layout: default-layout
       {% include "icons/chain-link.svg" %}
       <h2>Bio</h2>
     </a>
-  <article class="text-section">
-    <p>
-         It's my passion to build intuitive and exciting user experiences. As the principal developer on diverse projects, I've crafted solutions for non-profits, universities, and the general public. Discover more about my work through my 
-        <a class="link" target="_blank" href="/assets/cv.pdf">portfolio</a> (et bien voici
-        <a class="link" target="_blank" href="/assets/cv-fr.pdf">la version française</a>).
-    </p>
-    <p>
-        I focus on enhancing user retention and ensuring seamless experiences across mobile and desktop. More than just performance, though, making websites that have personality drives me.
-    </p>
-</article>
-
+    <article class="text-section">
+      <p>
+        It's my passion to build intuitive and exciting user experiences. As the principal developer on diverse projects, I've
+        crafted solutions for non-profits, universities, and the general public. Feel free to get in touch if you think we might
+        be a good fit!
+      </p>
+      <p>
+        I focus on enhancing user retention and ensuring seamless experiences across mobile and desktop, and I enjoy building
+        things that have a personality of their own.
+      </p>
+    </article>
   </section>
   <section id="summary">
     <a class="section-header" href="#technologies">
       {% include "icons/chain-link.svg" %}
       <h2>Technologies</h2>
     </a>
-    {# Build cards #} {%- for card in collections.card -%}
-    <article class="card">
-      <h3 class="card-subject">{{ card.data.title }}</h3>
-      <div class="card-content">
-        {{ card.templateContent | safe }}
-      </div>
-    </article>
+    {# Build cards #}
+    {%- for card in collections.card -%}
+      <article class="card">
+        <h3 class="card-subject">{{ card.data.title }}</h3>
+        <div class="card-content">
+          {{ card.templateContent | safe }}
+        </div>
+      </article>
     {%- endfor -%}
   </section>
   <section id="links">
@@ -43,32 +44,20 @@ layout: default-layout
     <article class="text-section">
       <ul class="icons-list">
         <li>
-          <a
-            class="icon-item link"
-            target="_blank"
-            href="mailto:medev@jamesmit.dev"
-          >
-            <img src="/assets/icons/mail.svg" alt="" />
+          <a class="icon-item link" target="_blank" href="mailto:medev@jamesmit.dev">
+            <img src="/assets/icons/mail.svg" alt=""/>
             <div>me@jamesmit.dev</div>
           </a>
         </li>
         <li>
-          <a
-            class="icon-item link"
-            target="_blank"
-            href="https://www.linkedin.com/in/jamesmit/"
-          >
-            <img src="/assets/icons/linkedin.svg" alt="" />
+          <a class="icon-item link" target="_blank" href="https://www.linkedin.com/in/jamesmit/">
+            <img src="/assets/icons/linkedin.svg" alt=""/>
             <div>/JamesMit</div>
           </a>
         </li>
         <li>
-          <a
-            class="icon-item link"
-            target="_blank"
-            href="https://github.com/JamesMitofsky"
-          >
-            <img src="/assets/icons/github.svg" alt="" />
+          <a class="icon-item link" target="_blank" href="https://github.com/JamesMitofsky">
+            <img src="/assets/icons/github.svg" alt=""/>
             <div>/JamesMitofsky</div>
           </a>
         </li>
@@ -81,32 +70,11 @@ layout: default-layout
       <h2>Contact</h2>
     </a>
     <article class="form-wrapper">
-      <form
-        id="form"
-        class="contact-form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        action="/#contact"
-      >
-        <label class="identifying-input"
-          >Your Name:
-          <input type="text" name="name" placeholder="ex. Alan Turing"
-        /></label>
-        <label class="identifying-input"
-          >Your Email:
-          <input
-            type="email"
-            name="email"
-            placeholder="ex. AlanTuring@gmail.com"
-        /></label>
-        <label class="form-message"
-          >Message:
-          <textarea
-            class="form-textarea"
-            name="message"
-            placeholder="ex. 'I love your site! Could you make me one?'"
-          ></textarea>
+      <form id="form" class="contact-form" name="contact" method="POST" data-netlify="true" action="/#contact">
+        <label class="identifying-input">Your Name: <input type="text" name="name" placeholder="ex. Alan Turing"/></label>
+        <label class="identifying-input">Your Email: <input type="email" name="email" placeholder="ex. AlanTuring@gmail.com"/></label>
+        <label class="form-message">Message:
+          <textarea class="form-textarea" name="message" placeholder="ex. 'I love your site! Could you make me one?'"></textarea>
         </label>
         <button class="submit-btn bg-gold" type="submit">Submit</button>
       </form>
